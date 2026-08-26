@@ -284,6 +284,122 @@ if my_string_3 == "Hola mundo":
 
 ### Bucles / Loops / ciclos ###
 
+#while
+
+my_condition=0
+
+while my_condition < 10:
+    print(my_condition, "Aun cumple la condicion")
+    my_condition+=2
+
+    if my_condition == 4:
+        print("Mi condicion ahora es 4")
+        break #Indicamos cuando es 4 sale del bucle, aunque sigue 
+              #siendo menor que la condicion impuesta.  
+else:
+    print("Mi condicion ya se ha superado")
+
+#No se acepta elif
+
+#For, nos sirve para iterar un listado de elementos
+
+my_list=[11,22,32,14,32,45,64]
+
+my_other_dict= {
+    "Nombre":"Ziwang",
+    "Apellido": "Chen",
+    "Edad":25,
+    "Idioma":{"Chino", "español", "ingles"},
+    1:14122212202,
+    } #Dato asociado a un valor
+
+my_other_set_2={"Ziwang", "Chen", 25, 0, True} #Esto es un set
+
+for element in my_list:
+    print(element)
+else:
+    print("Se ha acabado el bucle for")
+
+for element in my_other_dict:
+    print(element)
+    
+    if element == "Idioma":
+        print("Se ha encontrado el key de idioma")
+        break #Acaba el bucle directamen, sin imprimir el codigo de else
+        #continue : este ejecuta el contenido del if, continua y acaba el bucle.
+else:
+    print("Se ha acabado la ejecucion")
 
 
+### funciones ###
+
+def my_own_function ():
+        
+    print("Este es mi propia funcion")
+
+my_own_function()
+
+
+def suma_de_dos_valores (first_numb, second_numb):
+    
+     print(first_numb+second_numb)
+
+suma_de_dos_valores("2","3")
+suma_de_dos_valores(2,3)
+
+#Aqui no fuerza el tipo de input.
+
+
+def suma_de_dos_valores_con_retorno (first_numb, second_numb):
+    
+     my_sum= first_numb + second_numb
+     
+     return my_sum
+ 
+my_result = suma_de_dos_valores_con_retorno(10, 5) #guardo el resultado en un variable
+
+print(my_result)
+
+def print_name (name, surname):
+    
+    print(f"{name} {surname}") #La f sirve para formartear al string y para acceder a los valore
+
+print_name("Ziwang", "Chen")
+print_name(surname="Ziwang", name="Chen") #cambio el orden.
+
+def print_name_por_defecto(name, surname,sex ="no necesario"):
+    
+    print(f"{name} {surname} {sex}")
+    
+print_name_por_defecto("Aiden","Chen", "Masculino")
+print_name_por_defecto("Aiden", "Chen")
+
+def print_texto(*text):
+    for texts in text:
+     print(texts.lower())
+
+print_texto("Hola", "lila") #con * podemos pasar infinitos textos
+print_texto("lol", "biba")
+
+### Clases ###
+
+class MyProfile: #Como buena practica la clase se define con mayusculas y sin guiones bajos.
+    #self es obligatorio
+    def __init__(self, name, surname): #Esta linea da posibilidad a Myprofile a recibir parametros
+        #pass #Se deja el pass cuando no se hace nada 
+        self.name=name
+        self.surnam=surname
+        self.full_name= f"{name} {surname}"
+    
+    def walk (self):
+        print(f"{self.full_name} esta caminando")
+        
+mi_perfil =MyProfile("Ziwang", "Chen")    
+  
+print(mi_perfil.name)
+print(mi_perfil.full_name)
+mi_perfil.walk()
+
+MyProfile.full_name = "Aiden" #Cambiar los datos de mi clase
+print(MyProfile.full_name)
 
