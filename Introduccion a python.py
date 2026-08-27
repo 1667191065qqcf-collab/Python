@@ -22,7 +22,7 @@ name, surname, alias, age = "Ziwang", "chen", "Muxin",25
 
 print("Me llamo:", name, surname, ", Mi edad es:",age, "y mi alias es:", alias)
 
-###Sistema de inputs###
+                        ###Sistema de inputs###
 """
 
 first_name=input("Cual es tu nombre:")
@@ -35,7 +35,7 @@ print(edad)
 
 """
 
-###Operadores###
+                        ###Operadores###
 print(10 % 2) #Operador de moduloLo que nos devuelve es el resto de la division
 print(2**3) 
 print(10//3) #Hace una division quita los decimales, dejando solamente la parte entera
@@ -52,13 +52,13 @@ print(len ("aaaa") >= len ("bbbb"))
 
 print(3>4)
 
-###strings###
+                            ###strings###
 
 new_strings="Esta es una nueva string con salto de linea \n esto es un salto de linea"
 print(new_strings)
 
 
-###formateo###
+                            ###formateo###
 
 name, surname,age= "Ziwang", "Chen", 25
 
@@ -76,7 +76,7 @@ language="python"
 reverse_string=language[::-1] #Esto es un slice, que nos permite invertir el string
 print(reverse_string)
 
-###Funciones##
+                        ###Funciones##
 
 print(language.capitalize()) #Capitaliza la primera letra del string
 print(language.upper()) #Convierte todo el string a mayusculas
@@ -86,7 +86,7 @@ print("1".isnumeric()) #Devuelve True si el string es un numero, False si no
 print(language.lower()) #Convierte todo el string a minusculas
 print(language.lower().isupper()) #Devuelve True si el string esta en mayusculas, False si no
 
-###Listas###
+                        ###Listas###
 
 my_list=[35,24,62,52,12,45,78,96,100]
 print(my_list)
@@ -123,7 +123,7 @@ my_other_list[1]="Nuevo valor" #Cambia el valor de un elemento de la lista
 print(my_other_list)
 
 
-###Tuplas###
+                        ###Tuplas###
 
 my_tuple=tuple()
 my_tuple=(35,24,62,52,12,45,78,96,100)
@@ -154,7 +154,8 @@ my_prueba_lista=[22,34,53,21,22,4]
 
 print(type(my_prueba_lista)) #Devuelve el tipo de la variable, en este caso es una lista
 
-###Sets### No tiene orden, no acepta repetidos, no puede acceder mediante indice.
+                        ###Sets### 
+#No tiene orden, no acepta repetidos, no puede acceder mediante indice.
 
 my_set=set()
 
@@ -189,7 +190,7 @@ print(my_other_set_2.difference(my_other_set_3)) #Devuelve un set con los elemen
 
 print(my_other_set_2.intersection(my_other_set_3)) #Devuelve un set con los elementos que estan en ambos sets
 
-###Diccionarios### 
+                        ###Diccionarios### 
 # Son una estructura de datos que nos permite almacenar pares de clave-valor.
 
 
@@ -231,7 +232,7 @@ print(list(my_other_dict)) #Solo devuelve la clave sin el valor.
 print(list(my_other_dict.values())) #Solo devuelve el valor 
 print(set(my_other_dict))
 
-###Condicionales###
+                        ###Condicionales###
 
 my_condicion=False
 
@@ -282,7 +283,7 @@ if my_string_3 == "Hola mundo":
     print("La cadena de texto coincide")
 
 
-### Bucles / Loops / ciclos ###
+                        ### Bucles / Loops / ciclos ###
 
 #while
 
@@ -331,7 +332,7 @@ else:
     print("Se ha acabado la ejecucion")
 
 
-### funciones ###
+                        ### Funciones ###
 
 def my_own_function ():
         
@@ -381,7 +382,7 @@ def print_texto(*text):
 print_texto("Hola", "lila") #con * podemos pasar infinitos textos
 print_texto("lol", "biba")
 
-### Clases ###
+                        ### Clases ###
 
 class MyProfile: #Como buena practica la clase se define con mayusculas y sin guiones bajos.
     #self es obligatorio
@@ -402,4 +403,83 @@ mi_perfil.walk()
 
 MyProfile.full_name = "Aiden" #Cambiar los datos de mi clase
 print(MyProfile.full_name)
+
+                        ###Excepciones### 
+#manejo de errores try -> except -> else -> finally
+
+numero_1=4
+numero_2=9
+numero_3="10"
+
+try:
+    print(numero_1 + numero_2)
+
+except: 
+
+    print("Se ha producido un error")
+
+else: #Solo se ejecuta si el codigo dentro del try se ejecuto correctamente
+    print("La ejecucion continua")
+
+finally: #Se ejecuta siempre
+    print("LA EJECUCION CONTINUA")
+
+#else y finally son opcionales, pero un try siempre lleva un except
+
+#Excepciones por tipo
+
+try:
+    print(numero_1 + numero_3)
+
+except ValueError:
+    print("Se producido un value error")
+
+except TypeError: 
+    print("Se ha producido un type error")
+
+#Captura de la informacion de la excepcion
+
+
+try:
+    print(numero_1 + numero_3)
+
+except ValueError as captura_error:
+
+    print(captura_error)
+
+#Capturamos donde esta el error y lo guardamos
+
+except Exception as exception_error:
+
+    print(exception_error)
+
+#La idea es que no se pete nuestro app cuando produce un error como casos anteriores, la cual no podemos ignorar.
+#Sino que el programa siga funcionando saltando a bloque de except
+
+                        ### Modulos ###
+#Se trata de llamar funciones creado en otros ficheros.
+
+import Fichero_modulo
+
+Fichero_modulo.suma_de_valores(3, 4, 1)
+
+Fichero_modulo.printvalue("Hola mundo")
+
+#Son dos forma de utilizar la llamada de funciones
+
+from Fichero_modulo import suma_de_valores, printvalue
+
+suma_de_valores(3, 5, 1)
+
+printvalue("Hello word")
+
+#Modulos propios del python
+import math
+
+print(math.pi)
+print(math.cos(0))
+
+from math import pi as renombra_pi #podemos renombrarla.
+
+print(renombra_pi)
 
