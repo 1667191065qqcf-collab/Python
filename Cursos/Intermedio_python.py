@@ -57,3 +57,31 @@ end_timedelta=timedelta(200, 100, weeks=11)
 
 print(end_timedelta - init_timedelta)
 print(end_timedelta+init_timedelta)
+
+                ###List Comprehension###
+
+my_original_list=[0,1,2,3,4,5,6,7,8]
+print(my_original_list)
+
+#Estamos haciendo lo mismo pero imagina que necesitamos llegar a numero 3000
+#No vas a poner numeros a mano desde 0 hasta 3000 -> range
+
+my_list = [i for i in range(8)] 
+print(my_list)
+
+
+my_list = [i+1 for i in range(8)] #Se guarda en i
+print(my_list)
+
+my_list = [i*i for i in range(8)] 
+print(my_list)
+
+my_range= range(8)
+print(list(my_range))
+
+def sum_five(number):
+    
+    return number +5 
+
+my_list=[sum_five(i) for i in range (8)]
+print(my_list)
